@@ -21,7 +21,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	// write your code here
+
+
         int result = sum(1, 10);
         System.out.println("" + result);
         sum1(1, 10);
