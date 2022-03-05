@@ -25,6 +25,7 @@ public class Main {
                 lar=n;
             if (n<sm)
                 sm=n;
+
         }
         System.out.printf ("The largest number is %d", lar);
         System.out.printf (" and The smallest number is %d \n", sm);
