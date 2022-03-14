@@ -25,22 +25,3 @@ public class Main {
         }
     }
 }
- /*
-    *
-C:\Users\Arifeen\Desktop>cd..
-
-C:\Users\Arifeen>cd..
-
-C:\Users>cd..
-
-C:\>D:
-
-D:\>path=C:\Program Files\Java\jdk1.8.0_111\bin
-
-D:\>javac Copy.java
-
-D:\>java Copy D:\\abc.dat D:\\xyz.dat
-21 bytes copied
-
-D:\>
-    * */
