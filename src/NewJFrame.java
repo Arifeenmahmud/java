@@ -38,6 +38,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        Exit = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -62,7 +63,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 new String [] {
                         "Title 1", "Title 2", "Title 3", "Title 4"
                 }
-
         ));
         jScrollPane2.setViewportView(jTable2);
 
@@ -111,6 +111,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jCheckBox2.setText("Oracle");
 
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -118,9 +125,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap(64, Short.MAX_VALUE))
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel1)
@@ -131,19 +136,18 @@ public class NewJFrame extends javax.swing.JFrame {
                                                                 .addComponent(jCheckBox1)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(jCheckBox2)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addGap(18, 18, 18)
                                                                 .addComponent(jButton1)
-                                                                .addGap(169, 169, 169))
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(Exit))
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addComponent(jRadioButton1)
-                                                                                .addGap(18, 18, 18)
-                                                                                .addComponent(jRadioButton2))
-                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                                                .addComponent(Student_name, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                                                                                .addComponent(Student_ID)))
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                                                .addComponent(jRadioButton1)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jRadioButton2))
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addComponent(Student_name, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                                                                .addComponent(Student_ID)))))
+                                .addContainerGap(64, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(187, 187, 187)
                                 .addComponent(jLabel3)
@@ -173,7 +177,8 @@ public class NewJFrame extends javax.swing.JFrame {
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jCheckBox1)
                                                         .addComponent(jButton1)
-                                                        .addComponent(jCheckBox2))))
+                                                        .addComponent(jCheckBox2)
+                                                        .addComponent(Exit))))
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(63, Short.MAX_VALUE))
@@ -204,6 +209,11 @@ public class NewJFrame extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
 
         model.addRow(row);
+    }
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        this.dispose();
     }
 
     /**
@@ -242,6 +252,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify
+    private javax.swing.JButton Exit;
     private javax.swing.JTextField Student_ID;
     private javax.swing.JTextField Student_name;
     private javax.swing.ButtonGroup buttonGroup1;
