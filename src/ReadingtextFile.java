@@ -8,6 +8,7 @@ public class ReadingtextFile {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
 
+
             while (line != null) {
                 sb.append(line);
                 //sb.append(System.lineSeparator());
