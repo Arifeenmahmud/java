@@ -39,6 +39,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         Exit = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -89,32 +90,71 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Student info Form");
 
+        Student_ID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Student_IDActionPerformed(evt);
+            }
+        });
+
+        Student_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Student_nameActionPerformed(evt);
+            }
+        });
+
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Male");
         jRadioButton1.setActionCommand("");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Female");
         jRadioButton2.setActionCommand("");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
 
                 },
                 new String [] {
-                        "Student ID", "Student Name", "Course"
+                        "Student ID", "Student Name", "Course", "Gender"
                 }
         ));
         jScrollPane3.setViewportView(jTable3);
 
         jCheckBox1.setText("java");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         jCheckBox2.setText("Oracle");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
 
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Delete");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -136,9 +176,11 @@ public class NewJFrame extends javax.swing.JFrame {
                                                                 .addComponent(jCheckBox1)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(jCheckBox2)
-                                                                .addGap(18, 18, 18)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(jButton1)
-                                                                .addGap(18, 18, 18)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jButton2)
+                                                                .addGap(13, 13, 13)
                                                                 .addComponent(Exit))
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                                 .addComponent(jRadioButton1)
@@ -178,7 +220,8 @@ public class NewJFrame extends javax.swing.JFrame {
                                                         .addComponent(jCheckBox1)
                                                         .addComponent(jButton1)
                                                         .addComponent(jCheckBox2)
-                                                        .addComponent(Exit))))
+                                                        .addComponent(Exit)
+                                                        .addComponent(jButton2))))
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(63, Short.MAX_VALUE))
@@ -207,13 +250,62 @@ public class NewJFrame extends javax.swing.JFrame {
 
         Object[] row= {a,b};
         DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-
         model.addRow(row);
+        clear();
+        String sSubject ="";
+        if (jCheckBox1.isSelected()) {
+            sSubject += "java";
+        }
+        if (jCheckBox2.isSelected()) {
+            sSubject += "java";
+        }
+
+
     }
 
+    public void clear(){
+        Student_ID.setText(null);
+        Student_name.setText(null);
+    }
+    public void DeleteTable() {
+        ((DefaultTableModel)jTable3.getModel()).setNumRows(0);
+    }
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         this.dispose();
+    }
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+
+    }
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void Student_IDActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+
+
+    }
+
+    private void Student_nameActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        DeleteTable();
+
     }
 
     /**
@@ -258,6 +350,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
