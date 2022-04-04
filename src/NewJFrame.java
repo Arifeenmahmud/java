@@ -248,17 +248,26 @@ public class NewJFrame extends javax.swing.JFrame {
         String a= Student_ID.getText();
         String b= Student_name.getText();
 
-        Object[] row= {a,b};
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-        model.addRow(row);
-        clear();
         String sSubject ="";
         if (jCheckBox1.isSelected()) {
             sSubject += "java";
         }
         if (jCheckBox2.isSelected()) {
-            sSubject += "java";
+            sSubject += " Oracle";
         }
+        String gender= "";
+        if (jRadioButton1.isSelected()) {
+            gender += "Male";
+        }
+        if (jRadioButton2.isSelected()) {
+            gender += "Female";
+        }
+
+        Object[] row= {a,b,sSubject,gender};
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.addRow(row);
+        clear();
+
 
 
     }
